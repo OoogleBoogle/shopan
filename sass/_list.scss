@@ -1,0 +1,17 @@
+.list {
+  background-color: #fff;
+  li {
+    padding: .5em;
+    border-bottom: 1px dotted black;
+  }
+  .imp-item {
+    background-color: $red;
+  }
+  .item {
+    background-color: $blue;
+  }
+  .complete {
+    background-color: gray;
+    text-decoration: line-through;
+  }
+}
