@@ -1,0 +1,49 @@
+.add-button,
+.list-complete,
+.delete-all {
+  background-color: $orange;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 0.6em;
+  border-radius: 20px 15px / 50px 30px;
+  border-bottom-width: 2px;
+  border-bottom-color: rgba(251, 157, 11, 0.51);
+}
+
+.delete-all {
+  background-color: darken($red, 30%);
+}
+
+.list-complete {
+  background-color: $green;
+}
+
+.button-holder {
+  text-align: center;
+  padding-bottom: .5em;
+}
+
+.dropdown {
+  border: 1px solid black;
+  border-left: none;
+  border-right: none;
+  margin: 0.4em auto;
+  max-width: 500px;
+  text-align: center;
+  #item-to-add {
+    border: none;
+    border-bottom: 1px dashed black;
+    background-color: $yellow;
+    height: 2em;
+    margin: 1em;
+  }
+  #radio-group {
+    margin-bottom: 1em;
+  }
+  .button-holder > button {
+    margin: 0 0.5em;
+  }
+}
+
+

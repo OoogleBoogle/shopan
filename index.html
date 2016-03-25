@@ -8,18 +8,24 @@
   <!--[if IE]>
       <link href="stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <![endif]-->
-
   <title>Shopan</title>
 </head>
 <body>
   <div class="list-container">
     <div class="logo"></div>
-    <button id="menu-open" class="add-button">Add Item</button>
+    <div class="button-holder">
+      <button id="menu-open" class="add-button">Add Item</button>
+    </div>
     <div class="dropdown">
-      <input type="text" placeholder="Add Item" id="item-to-add">
-      <input type="radio" class="important">
-      <button class="add-button">Add to List</button>
-      <button class="list-complete">Done</button>
+        <input type="text" placeholder="Add Item" id="item-to-add">
+        <div id="radio-group">
+          <input type="radio" id="important">
+          <label for="important">Important</label>
+        </div>
+      <div class="button-holder">
+        <button class="add-button">Add to List</button>
+        <button class="list-complete">Done</button>
+      </div>
     </div>
     <ul class="list">
       <li class="imp-item">Chocolate</li>
@@ -29,7 +35,9 @@
       <li class="complete">Shoe Shine</li>
       <li class="complete">Lizards</li>
     </ul>
-    <button class="delete-all">Delete</button>
+    <div class="button-holder">
+      <button class="delete-all">Delete</button>
+    </div>
   </div>
 </body>
 </html>
