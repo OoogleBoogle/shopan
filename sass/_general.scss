@@ -9,16 +9,66 @@ $orange: #FB9D0B;
 
 // =========================== Fonts =========================
 
+body {
+  font-family: 'Gloria Hallelujah', cursive;
+}
 
+button {
+  font-family: 'Poiret One', cursive;
+  font-weight: 600;
+}
 
 // ====================== General ========================
 
+html {
+  @media screen and (min-width: 678px) {
+    background-color: $paleblue;
+  }
+}
+
 body {
   background-color: $yellow;
+  max-width: 42em;
+  margin: 0 auto;
+  @media screen and (min-width: 678px) {
+    margin-top: 4vw;
+    margin-bottom: 4vw;
+    box-shadow: 0px 4px 8px 3px gray;
+  }
 }
 
 .list-container {
-  // width: 100vw;
-  padding: 2em;
+  padding: 1em;
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+// ============================ Buttons ==========================
+
+
+.add-button,
+.list-complete,
+.delete-all {
+  background-color: $orange;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 0.6em;
+  border-radius: 20px 15px / 50px 30px;
+  border-bottom-width: 2px;
+  border-bottom-color: rgba(251, 157, 11, 0.51);
+}
+
+.delete-all {
+  background-color: darken($red, 30%);
+}
+
+.list-complete {
+  background-color: $green;
+}
+
+.button-holder {
+  text-align: center;
+  padding-bottom: .5em;
 }
 
