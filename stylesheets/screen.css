@@ -175,21 +175,22 @@ body {
 /* line 1, ../sass/_list.scss */
 .list {
   background-color: #fff;
+  margin-bottom: 1em;
 }
-/* line 3, ../sass/_list.scss */
+/* line 4, ../sass/_list.scss */
 .list li {
   padding: .5em;
   border-bottom: 1px dotted black;
 }
-/* line 7, ../sass/_list.scss */
+/* line 8, ../sass/_list.scss */
 .list .imp-item {
   background-color: #F38181;
 }
-/* line 10, ../sass/_list.scss */
+/* line 11, ../sass/_list.scss */
 .list .item {
   background-color: #95E1D3;
 }
-/* line 13, ../sass/_list.scss */
+/* line 14, ../sass/_list.scss */
 .list .complete {
   background-color: gray;
   text-decoration: line-through;
