@@ -148,6 +148,7 @@ body {
 
 /* line 3, ../sass/_dropdown.scss */
 .dropdown {
+  display: none;
   border: 1px solid black;
   border-left: none;
   border-right: none;
@@ -155,7 +156,7 @@ body {
   max-width: 500px;
   text-align: center;
 }
-/* line 10, ../sass/_dropdown.scss */
+/* line 11, ../sass/_dropdown.scss */
 .dropdown #item-to-add {
   border: none;
   border-bottom: 1px dashed black;
@@ -163,11 +164,11 @@ body {
   height: 2em;
   margin: 1em;
 }
-/* line 17, ../sass/_dropdown.scss */
+/* line 18, ../sass/_dropdown.scss */
 .dropdown #radio-group {
   margin-bottom: 1em;
 }
-/* line 20, ../sass/_dropdown.scss */
+/* line 21, ../sass/_dropdown.scss */
 .dropdown .button-holder > button {
   margin: 0 0.5em;
 }
