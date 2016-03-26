@@ -29,10 +29,13 @@ $(function() {
         $('.dropdown').slideUp();
         $('#menu-open').css('background-color', '#FB9D0B');
         break;
-      // when delete is pressed, delete any staged
+      // when delete is pressed
       case "Delete":
-
-        console.log('deleting');
+        // find items for deletion
+        // remove them
+        $('.complete').slideUp(500, function() {
+          $(this).remove();
+        });
         break;
       default:
         console.log('no match');
