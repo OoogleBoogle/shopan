@@ -17,26 +17,21 @@ $(function() {
 
       // when #add-to-list is pressed 
       case "Add to List":
-        listHTML = '';
-        // check for important
-        if ($('#important').prop('checked')) {
-        // create html
-          listHTML += '<li class="imp-item">';
-          listHTML += $('#item-to-add').val() + '</li>';
-          $('.list').prepend(listHTML);
-        } else {
-          listHTML += '<li class="item">';
-          listHTML += $('#item-to-add').val() + '</li>';
-        }
-        // clear text box, menu stays open
-        $('#item-to-add').val('');
-        
-
+        addToList($('#item-to-add').val(), $('#important').prop('checked'))
         break;
+      // when #list-complete is pressed
       case "Done":
-        console.log('list complete');
+        // if there's a value, add it to the list
+        if ($('#item-to-add').val() !== "") {
+          addToList($('#item-to-add').val(), $('#important').prop('checked'))
+        }
+        // close menu
+        $('.dropdown').slideUp();
+        $('#menu-open').css('background-color', '#FB9D0B');
         break;
+      // when delete is pressed, delete any staged
       case "Delete":
+
         console.log('deleting');
         break;
       default:
@@ -46,13 +41,32 @@ $(function() {
 
 
 
-    // when .list-complete is pressed - checks for value (if blank, don't add) - close menu
-
-
-
   //when item pressed add to delete staging queue
 
 
-  // when delete is pressed, delete any staged
 
 });
+
+function addToList(val, imp) {
+  listHTML = '';
+  // if important is ticked
+  if (imp) {
+    // add to top of the list
+    listHTML += '<li class="imp-item">' + val + '</li>';
+    $('.list').prepend(listHTML);
+  // otherwise...
+  } else {
+    // build html
+    listHTML += '<li class="item">' + val + '</li>';
+    // check to see if there are already important items
+    if ($('.list').children().hasClass('imp-item')) {
+      // if so, append after last one
+      $('.imp-item').last().after(listHTML);
+    } else {
+      // otherwise add to top
+      $('.list').append(listHTML);
+    }
+  }
+  // // clear text box, menu stays open
+  $('#item-to-add').val('');
+}
