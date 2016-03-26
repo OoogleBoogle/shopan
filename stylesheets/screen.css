@@ -186,13 +186,16 @@ body {
 /* line 8, ../sass/_list.scss */
 .list .imp-item {
   background-color: #F38181;
+  display: none;
 }
-/* line 11, ../sass/_list.scss */
+/* line 12, ../sass/_list.scss */
 .list .item {
   background-color: #95E1D3;
+  display: none;
 }
-/* line 14, ../sass/_list.scss */
+/* line 16, ../sass/_list.scss */
 .list .complete {
   background-color: gray;
   text-decoration: line-through;
+  display: none;
 }

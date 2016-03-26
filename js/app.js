@@ -14,7 +14,6 @@ $(function() {
           $(this).css('background-color', 'gray');
         }
         break;
-
       // when #add-to-list is pressed 
       case "Add to List":
         addToList($('#item-to-add').val(), $('#important').prop('checked'))
@@ -40,34 +39,50 @@ $(function() {
       default:
         console.log('no match');
     }
-  })
-
-
-
+  });
   //when item pressed add to delete staging queue
-
-
-
+  $('.list').on('click', 'li', function() {
+    // check if already staged
+    if ($(this).hasClass('imp-item') || $(this).hasClass('item')) {
+      // var $item = $(this).clone().attr('class', 'complete');
+      $(this).slideUp(500, function() {
+        var $item = $(this).detach().attr('class', 'complete');
+        console.log($item);
+        $('.list').append($item);
+        $('.list').children().last().slideDown();
+      });
+      // $item;
+      // console.log($item);
+      // 
+      // 
+    }
+  });
 });
 
 function addToList(val, imp) {
-  listHTML = '';
-  // if important is ticked
-  if (imp) {
-    // add to top of the list
-    listHTML += '<li class="imp-item">' + val + '</li>';
-    $('.list').prepend(listHTML);
-  // otherwise...
-  } else {
-    // build html
-    listHTML += '<li class="item">' + val + '</li>';
-    // check to see if there are already important items
-    if ($('.list').children().hasClass('imp-item')) {
-      // if so, append after last one
-      $('.imp-item').last().after(listHTML);
+  // check textbax has value
+  if (val !== "") {
+    listHTML = '';
+    // if important is ticked
+    if (imp) {
+      // add to top of the list
+      listHTML += '<li class="imp-item">' + val + '</li>';
+      $('.list').prepend(listHTML);
+      $('.imp-item:first').slideDown();
+    // otherwise...
     } else {
-      // otherwise add to top
-      $('.list').append(listHTML);
+      // build html
+      listHTML += '<li class="item">' + val + '</li>';
+      // check to see if there are already important items
+      if ($('.list').children().hasClass('imp-item')) {
+        // if so, append after last one
+        $('.imp-item').last().after(listHTML).slideDown();
+        $('.item:first').slideDown();
+      } else {
+        // otherwise add to top
+        $('.list').prepend(listHTML);
+        $('.list li:first').slideDown();
+      }
     }
   }
   // // clear text box, menu stays open
