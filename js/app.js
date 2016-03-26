@@ -37,7 +37,7 @@ $(function() {
         });
         break;
       default:
-        console.log('no match');
+        console.log('Mama?...sumthang goin wrong ere...');
     }
   });
   //when item pressed add to delete staging queue
@@ -47,7 +47,6 @@ $(function() {
       // var $item = $(this).clone().attr('class', 'complete');
       $(this).slideUp(500, function() {
         var $item = $(this).detach().attr('class', 'complete');
-        console.log($item);
         $('.list').append($item);
         $('.list').children().last().slideDown();
       });
@@ -69,6 +68,7 @@ function addToList(val, imp) {
       listHTML += '<li class="imp-item">' + val + '</li>';
       $('.list').prepend(listHTML);
       $('.imp-item:first').slideDown();
+      $('#important').prop('checked', false);
     // otherwise...
     } else {
       // build html
