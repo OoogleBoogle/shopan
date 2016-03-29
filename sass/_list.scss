@@ -7,12 +7,15 @@
   }
   .imp-item {
     background-color: $red;
+    display: none;
   }
   .item {
     background-color: $blue;
+    display: none;
   }
   .complete {
     background-color: gray;
     text-decoration: line-through;
+    display: none;
   }
 }

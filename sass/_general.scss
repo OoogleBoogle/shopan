@@ -57,6 +57,9 @@ body {
   border-radius: 20px 15px / 50px 30px;
   border-bottom-width: 2px;
   border-bottom-color: rgba(251, 157, 11, 0.51);
+  &:focus {
+    outline: none;
+  }
 }
 
 .delete-all {

@@ -17,25 +17,21 @@
     <div class="dropdown">
         <input type="text" placeholder="Add Item" id="item-to-add">
         <div id="radio-group">
-          <input type="radio" id="important">
-          <label for="important">Important</label>
+          <label for="important" class="label">Important</label>
+          <input type="checkbox" id="important">
+          <label for="important" class="inner"></label>
         </div>
       <div class="button-holder">
-        <button class="add-button">Add to List</button>
+        <button class="add-button" id="add-to-list">Add to List</button>
         <button class="list-complete">Done</button>
       </div>
     </div>
-    <ul class="list">
-      <li class="imp-item">Chocolate</li>
-      <li class="imp-item">Peanut Butter</li>
-      <li class="item">Melon</li>
-      <li class="item">Peas</li>
-      <li class="complete">Shoe Shine</li>
-      <li class="complete">Lizards</li>
-    </ul>
+    <ul class="list"></ul>
     <div class="button-holder">
       <button class="delete-all">Delete</button>
     </div>
   </div>
+  <script   src="//code.jquery.com/jquery-2.2.2.min.js"   integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="   crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
