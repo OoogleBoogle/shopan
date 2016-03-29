@@ -14,16 +14,17 @@ $(function() {
           //menu slides down
           $('.dropdown').slideDown();
           $($this).text('Close Menu');
+          $('#item-to-add').focus();
         });
         break;
       case "Close Menu":
         // menu slides up
         $(this).text('Open Menu');
-        $('.dropdown').slideUp(function() {
+        $('.dropdown').slideUp(200, function() {
           $('hr').animate({
             width: 0,
             'margin-left': '50%'
-          });
+          }, 200);
         });
         break;
       // when #add-to-list is pressed 
@@ -78,30 +79,33 @@ $(function() {
 function addToList(val, imp) {
   // check textbax has value
   if (val !== "") {
-    listHTML = '';
+    // create element to escape HTML tags
+    var itemText = document.createTextNode(val);
+    var listEl = document.createElement('li');
+    listEl.appendChild(itemText);
     // if important is ticked
     if (imp) {
       // add to top of the list
-      listHTML += '<li class="imp-item">' + val + '</li>';
-      $('.list').prepend(listHTML);
+      listEl.className = 'imp-item';
+      $('.list').prepend(listEl);
       $('.imp-item:first').slideDown();
       $('#important').prop('checked', false);
     // otherwise...
     } else {
       // build html
-      listHTML += '<li class="item">' + val + '</li>';
+      listEl.className = 'item';
       // check to see if there are already important items
       if ($('.list').children().hasClass('imp-item')) {
         // if so, append after last one
-        $('.imp-item').last().after(listHTML).slideDown();
+        $('.imp-item').last().after(listEl).slideDown();
         $('.item:first').slideDown();
       } else {
         // otherwise add to top
-        $('.list').prepend(listHTML);
+        $('.list').prepend(listEl);
         $('.list li:first').slideDown();
       }
     }
   }
-  // // clear text box, menu stays open
+  // clear text box, menu stays open
   $('#item-to-add').val('');
 }
