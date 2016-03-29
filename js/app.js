@@ -1,5 +1,6 @@
-$(function() {
+var toDelete = [];
 
+$(function() {
   $('.button-holder').on('click', 'button', function(e) {
     switch ($(this).text()) {     
       // when #menu-open button clicked, 
@@ -26,6 +27,8 @@ $(function() {
         $('.complete').slideUp(500, function() {
           $(this).remove();
         });
+        // clear toDelete array
+        toDelete = [];
         break;
       default:
         console.log('Mama?...sumthang goin wrong ere...');
@@ -35,16 +38,27 @@ $(function() {
   $('.list').on('click', 'li', function() {
     // check if already staged
     if ($(this).hasClass('imp-item') || $(this).hasClass('item')) {
-      // var $item = $(this).clone().attr('class', 'complete');
+      // create an object holding cuttent properties for 'undeletion'
+      var imp = $(this).hasClass('imp-item');
+      var props = {name: $(this).text(), important: imp};
+      toDelete.push(props);
+      // remove and add to the bottom of the list
       $(this).slideUp(500, function() {
         var $item = $(this).detach().attr('class', 'complete');
         $('.list').append($item);
         $('.list').children().last().slideDown();
       });
-      // $item;
-      // console.log($item);
-      // 
-      // 
+      // if item is already complete - add back
+    } else if ($(this).hasClass('complete')) {
+      var item;
+      for (var i = 0; i < toDelete.length; i++) {
+        if (toDelete[i].name === $(this).text()) {
+          item = toDelete[i];
+          toDelete.splice(i,1);
+        }
+      }
+      $(this).slideUp();
+      addToList(item.name, item.important);
     }
   });
 });
