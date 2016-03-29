@@ -9,7 +9,8 @@ $orange: #FB9D0B;
 
 // =========================== Fonts =========================
 
-body {
+body,
+#item-to-add {
   font-family: 'Gloria Hallelujah', cursive;
 }
 
@@ -46,9 +47,9 @@ body {
 }
 
 hr {
-  margin: 0;
-  margin-left: 50%;
-  width: 0;
+  margin: 0 auto;
+  // margin-left: 50%;
+  width: 3%;
   border-color: #000;
 }
 

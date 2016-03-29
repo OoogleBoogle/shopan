@@ -68,11 +68,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 /* line 12, ../sass/_general.scss */
-body {
+body,
+#item-to-add {
   font-family: 'Gloria Hallelujah', cursive;
 }
 
-/* line 16, ../sass/_general.scss */
+/* line 17, ../sass/_general.scss */
 button {
   font-family: 'Poiret One', cursive;
   font-weight: 600;
@@ -81,20 +82,20 @@ button {
 }
 
 @media screen and (min-width: 678px) {
-  /* line 25, ../sass/_general.scss */
+  /* line 26, ../sass/_general.scss */
   html {
     background-color: #EAFFD0;
   }
 }
 
-/* line 31, ../sass/_general.scss */
+/* line 32, ../sass/_general.scss */
 body {
   background-color: #FCE38A;
   max-width: 42em;
   margin: 0 auto;
 }
 @media screen and (min-width: 678px) {
-  /* line 31, ../sass/_general.scss */
+  /* line 32, ../sass/_general.scss */
   body {
     margin-top: 4vw;
     margin-bottom: 4vw;
@@ -102,22 +103,21 @@ body {
   }
 }
 
-/* line 42, ../sass/_general.scss */
+/* line 43, ../sass/_general.scss */
 .list-container {
   padding: 1em;
   max-width: 40em;
   margin: 0 auto;
 }
 
-/* line 48, ../sass/_general.scss */
+/* line 49, ../sass/_general.scss */
 hr {
-  margin: 0;
-  margin-left: 50%;
-  width: 0;
+  margin: 0 auto;
+  width: 3%;
   border-color: #000;
 }
 
-/* line 58, ../sass/_general.scss */
+/* line 59, ../sass/_general.scss */
 .add-button,
 .list-complete,
 .delete-all {
@@ -130,24 +130,24 @@ hr {
   border-bottom-width: 2px;
   border-bottom-color: rgba(251, 157, 11, 0.51);
 }
-/* line 69, ../sass/_general.scss */
+/* line 70, ../sass/_general.scss */
 .add-button:focus,
 .list-complete:focus,
 .delete-all:focus {
   outline: none;
 }
 
-/* line 74, ../sass/_general.scss */
+/* line 75, ../sass/_general.scss */
 .delete-all {
   background-color: #c81313;
 }
 
-/* line 78, ../sass/_general.scss */
+/* line 79, ../sass/_general.scss */
 .list-complete {
   background-color: #37FF37;
 }
 
-/* line 82, ../sass/_general.scss */
+/* line 83, ../sass/_general.scss */
 .button-holder {
   text-align: center;
   padding-bottom: .5em;
@@ -167,7 +167,7 @@ hr {
   display: none;
   border-bottom: 2px solid black;
   margin: 0.4em auto;
-  max-width: 500px;
+  max-width: 78%;
   text-align: center;
 }
 /* line 9, ../sass/_dropdown.scss */
@@ -184,55 +184,11 @@ hr {
 .dropdown #item-to-add:focus {
   outline: none;
 }
-/* line 21, ../sass/_dropdown.scss */
-.dropdown #radio-group {
-  margin-bottom: 4%;
-  margin-top: 2%;
-  margin-left: 34%;
-  border-radius: 100%;
-  position: relative;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
-  width: 30px;
-  height: 30px;
-  background-color: #ddd;
-}
-/* line 31, ../sass/_dropdown.scss */
-.dropdown #radio-group input[type="checkbox"] {
-  visibility: hidden;
-}
-/* line 33, ../sass/_dropdown.scss */
-.dropdown #radio-group input[type="checkbox"]:checked + .inner {
-  background-color: #c81313;
-}
-/* line 37, ../sass/_dropdown.scss */
-.dropdown #radio-group .inner {
-  display: block;
-  width: 20px;
-  height: 20px;
-  border-radius: 100%;
-  transition: all .5s ease;
-  cursor: pointer;
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  z-index: 1;
-  background-color: #333;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-/* line 51, ../sass/_dropdown.scss */
-.dropdown #radio-group .label {
-  margin-left: 140%;
-  vertical-align: text-bottom;
-}
-/* line 56, ../sass/_dropdown.scss */
-.dropdown .button-holder > button {
-  margin: 0 0.5em;
-}
 
 /* line 1, ../sass/_list.scss */
 .list {
   background-color: #fff;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 /* line 4, ../sass/_list.scss */
 .list li {

@@ -8,8 +8,8 @@ $(function() {
         // animate hr
         $this = $(this);
         $('hr').animate({ 
-          width: '78%',
-          'margin-left': "11%"
+          width: '78%'
+          // 'margin-left': "11%"
         }, 200, function() {
           //menu slides down
           $('.dropdown').slideDown();
@@ -22,8 +22,8 @@ $(function() {
         $(this).text('Open Menu');
         $('.dropdown').slideUp(200, function() {
           $('hr').animate({
-            width: 0,
-            'margin-left': '50%'
+            width: '3%'
+            // 'margin-left': '50%'
           }, 200);
         });
         break;
@@ -76,9 +76,11 @@ $(function() {
   });
 });
 
-function addToList(val, imp) {
+// function addToList(val, imp)
+  function addToList(val) {
   // check textbax has value
   if (val !== "") {
+    var imp = val[val.length - 1] === "!" ? true : false;
     // create element to escape HTML tags
     var itemText = document.createTextNode(val);
     var listEl = document.createElement('li');
