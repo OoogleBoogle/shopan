@@ -5,14 +5,26 @@ $(function() {
     switch ($(this).text()) {     
       // when #menu-open button clicked, 
       case "Open Menu":
-        //menu slides down 
-        $('.dropdown').slideDown();
-        $(this).text('Close Menu');
+        // animate hr
+        $this = $(this);
+        $('hr').animate({ 
+          width: '78%',
+          'margin-left': "11%"
+        }, 200, function() {
+          //menu slides down
+          $('.dropdown').slideDown();
+          $($this).text('Close Menu');
+        });
         break;
       case "Close Menu":
         // menu slides up
-        $('.dropdown').slideUp();
         $(this).text('Open Menu');
+        $('.dropdown').slideUp(function() {
+          $('hr').animate({
+            width: 0,
+            'margin-left': '50%'
+          });
+        });
         break;
       // when #add-to-list is pressed 
       case "Add to List":

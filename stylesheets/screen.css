@@ -109,7 +109,15 @@ body {
   margin: 0 auto;
 }
 
-/* line 51, ../sass/_general.scss */
+/* line 48, ../sass/_general.scss */
+hr {
+  margin: 0;
+  margin-left: 50%;
+  width: 0;
+  border-color: #000;
+}
+
+/* line 58, ../sass/_general.scss */
 .add-button,
 .list-complete,
 .delete-all {
@@ -122,24 +130,24 @@ body {
   border-bottom-width: 2px;
   border-bottom-color: rgba(251, 157, 11, 0.51);
 }
-/* line 62, ../sass/_general.scss */
+/* line 69, ../sass/_general.scss */
 .add-button:focus,
 .list-complete:focus,
 .delete-all:focus {
   outline: none;
 }
 
-/* line 67, ../sass/_general.scss */
+/* line 74, ../sass/_general.scss */
 .delete-all {
   background-color: #c81313;
 }
 
-/* line 71, ../sass/_general.scss */
+/* line 78, ../sass/_general.scss */
 .list-complete {
   background-color: #37FF37;
 }
 
-/* line 75, ../sass/_general.scss */
+/* line 82, ../sass/_general.scss */
 .button-holder {
   text-align: center;
   padding-bottom: .5em;
@@ -157,14 +165,12 @@ body {
 /* line 3, ../sass/_dropdown.scss */
 .dropdown {
   display: none;
-  border: 1px solid black;
-  border-left: none;
-  border-right: none;
+  border-bottom: 2px solid black;
   margin: 0.4em auto;
   max-width: 500px;
   text-align: center;
 }
-/* line 11, ../sass/_dropdown.scss */
+/* line 9, ../sass/_dropdown.scss */
 .dropdown #item-to-add {
   border: none;
   border-bottom: 1px dashed black;
@@ -174,11 +180,11 @@ body {
   margin-bottom: 0.5em;
   width: 50%;
 }
-/* line 19, ../sass/_dropdown.scss */
+/* line 17, ../sass/_dropdown.scss */
 .dropdown #item-to-add:focus {
   outline: none;
 }
-/* line 23, ../sass/_dropdown.scss */
+/* line 21, ../sass/_dropdown.scss */
 .dropdown #radio-group {
   margin-bottom: 4%;
   margin-top: 2%;
@@ -190,15 +196,15 @@ body {
   height: 40px;
   background-color: #ddd;
 }
-/* line 33, ../sass/_dropdown.scss */
+/* line 31, ../sass/_dropdown.scss */
 .dropdown #radio-group input[type="checkbox"] {
   visibility: hidden;
 }
-/* line 35, ../sass/_dropdown.scss */
+/* line 33, ../sass/_dropdown.scss */
 .dropdown #radio-group input[type="checkbox"]:checked + .inner {
   background-color: #c81313;
 }
-/* line 39, ../sass/_dropdown.scss */
+/* line 37, ../sass/_dropdown.scss */
 .dropdown #radio-group .inner {
   display: block;
   width: 30px;
@@ -213,12 +219,12 @@ body {
   background-color: #333;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
-/* line 53, ../sass/_dropdown.scss */
+/* line 51, ../sass/_dropdown.scss */
 .dropdown #radio-group .label {
   margin-left: 140%;
   vertical-align: text-bottom;
 }
-/* line 58, ../sass/_dropdown.scss */
+/* line 56, ../sass/_dropdown.scss */
 .dropdown .button-holder > button {
   margin: 0 0.5em;
 }
