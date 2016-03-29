@@ -1,32 +1,23 @@
 $(function() {
 
-  $('.button-holder').on('click', 'button', function() {
-    switch ($(this).text()) {
-      
+  $('.button-holder').on('click', 'button', function(e) {
+    switch ($(this).text()) {     
       // when #menu-open button clicked, 
-      case "Add Item":
-        //menu slides up/down 
-        if ($('.dropdown').is(':visible')) {
-          $('.dropdown').slideUp();
-          $('#menu-open').css('background-color', '#FB9D0B');
-        } else {
-          $('.dropdown').slideDown();
-          $(this).css('background-color', 'gray');
-        }
+      case "Open Menu":
+        //menu slides down 
+        $('.dropdown').slideDown();
+        $(this).text('Close Menu');
+        break;
+      case "Close Menu":
+        // menu slides up
+        $('.dropdown').slideUp();
+        $(this).text('Open Menu');
         break;
       // when #add-to-list is pressed 
       case "Add to List":
-        addToList($('#item-to-add').val(), $('#important').prop('checked'))
-        break;
-      // when #list-complete is pressed
-      case "Done":
-        // if there's a value, add it to the list
-        if ($('#item-to-add').val() !== "") {
-          addToList($('#item-to-add').val(), $('#important').prop('checked'))
-        }
-        // close menu
-        $('.dropdown').slideUp();
-        $('#menu-open').css('background-color', '#FB9D0B');
+        e.preventDefault();
+        addToList($('#item-to-add').val(), $('#important').prop('checked'));
+        $('#item-to-add').focus();
         break;
       // when delete is pressed
       case "Delete":

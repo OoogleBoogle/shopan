@@ -14,7 +14,7 @@
     <div class="button-holder">
       <button id="menu-open" class="add-button">Open Menu</button>
     </div>
-    <div class="dropdown">
+    <form class="dropdown">
         <input type="text" placeholder="Add Item" id="item-to-add">
         <div id="radio-group">
           <label for="important" class="label">Important</label>
@@ -22,10 +22,9 @@
           <label for="important" class="inner"></label>
         </div>
       <div class="button-holder">
-        <button class="add-button" id="add-to-list">Add to List</button>
-        <button class="list-complete">Done</button>
+        <button type="submit" class="add-button" id="add-to-list">Add to List</button>
       </div>
-    </div>
+    </form>
     <ul class="list"></ul>
     <div class="button-holder">
       <button class="delete-all">Delete</button>

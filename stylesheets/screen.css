@@ -76,23 +76,25 @@ body {
 button {
   font-family: 'Poiret One', cursive;
   font-weight: 600;
+  font-size: 1em;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 678px) {
-  /* line 23, ../sass/_general.scss */
+  /* line 25, ../sass/_general.scss */
   html {
     background-color: #EAFFD0;
   }
 }
 
-/* line 29, ../sass/_general.scss */
+/* line 31, ../sass/_general.scss */
 body {
   background-color: #FCE38A;
   max-width: 42em;
   margin: 0 auto;
 }
 @media screen and (min-width: 678px) {
-  /* line 29, ../sass/_general.scss */
+  /* line 31, ../sass/_general.scss */
   body {
     margin-top: 4vw;
     margin-bottom: 4vw;
@@ -100,14 +102,14 @@ body {
   }
 }
 
-/* line 40, ../sass/_general.scss */
+/* line 42, ../sass/_general.scss */
 .list-container {
   padding: 1em;
   max-width: 40em;
   margin: 0 auto;
 }
 
-/* line 49, ../sass/_general.scss */
+/* line 51, ../sass/_general.scss */
 .add-button,
 .list-complete,
 .delete-all {
@@ -120,24 +122,24 @@ body {
   border-bottom-width: 2px;
   border-bottom-color: rgba(251, 157, 11, 0.51);
 }
-/* line 60, ../sass/_general.scss */
+/* line 62, ../sass/_general.scss */
 .add-button:focus,
 .list-complete:focus,
 .delete-all:focus {
   outline: none;
 }
 
-/* line 65, ../sass/_general.scss */
+/* line 67, ../sass/_general.scss */
 .delete-all {
   background-color: #c81313;
 }
 
-/* line 69, ../sass/_general.scss */
+/* line 71, ../sass/_general.scss */
 .list-complete {
   background-color: #37FF37;
 }
 
-/* line 73, ../sass/_general.scss */
+/* line 75, ../sass/_general.scss */
 .button-holder {
   text-align: center;
   padding-bottom: .5em;
@@ -230,18 +232,19 @@ body {
 .list li {
   padding: .5em;
   border-bottom: 1px dotted black;
+  cursor: pointer;
 }
-/* line 8, ../sass/_list.scss */
+/* line 9, ../sass/_list.scss */
 .list .imp-item {
   background-color: #F38181;
   display: none;
 }
-/* line 12, ../sass/_list.scss */
+/* line 13, ../sass/_list.scss */
 .list .item {
   background-color: #95E1D3;
   display: none;
 }
-/* line 16, ../sass/_list.scss */
+/* line 17, ../sass/_list.scss */
 .list .complete {
   background-color: gray;
   text-decoration: line-through;
