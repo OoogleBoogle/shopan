@@ -1,7 +1,10 @@
 
 $(function() {
   var toDelete = [];
-
+  $('.list').sortable({
+    opacity: 0.8,
+    cursor: "move "
+  });
   $('.button-holder').on('click', 'button', function(e) {
     switch (this.id) {     
       // when #menu-open button clicked, 
@@ -57,7 +60,7 @@ $(function() {
   $('.list').on('click', 'i', function() {
     var $parent = $(this).parent();
     // check if a tick
-    if ($(this).hasClass('fa-check')) {
+    if ($(this).is($('#check'))) {
       // create an object holding cuttent properties for 'undeletion'
       var imp = $parent.hasClass('imp-item');
       // store properties in an object, just in case
@@ -67,12 +70,13 @@ $(function() {
       $parent.slideUp(500, function() {
         var $item = $(this).detach().attr('class', 'complete');
         $item.find('i').remove()
-        .end().prepend('<i class="fa fa-undo"></i><i class="fa fa-times"></li>');
+        .end().prepend('<i id="put-back" class="fa fa-undo"></i><i id="delete-item" class="fa fa-times"></li>');
         $('.list').append($item);
         $('.list').children().last().slideDown();
       });
     // if undo pressed
-    } else if ($(this).hasClass('fa-undo')) {
+    } else if ($(this).is($('#put-back'))) {
+      console.log('clicked');
       var item;
       for (var i = 0; i < toDelete.length; i++) {
         if (toDelete[i].name === $(this).parent().text()) {
@@ -83,17 +87,22 @@ $(function() {
       $(this).parent().slideUp();
       addToList(item.name, item.important);
     // or cancel
-    } else if ($(this).hasClass('fa-times')) {
+    } else if ($(this).is($('#delete-item'))) {
       $parent.slideUp(500, function() {
         $(this).remove();
       })
     }
   });
+
+
+
   // faffing with color
   $('#color').on('change', function() {
     $('html').css('background-color', $(this).val());
   });
 });
+
+
 
 // function addToList(val, imp)
 function addToList(val) {
@@ -105,6 +114,7 @@ function addToList(val) {
     var itemText = document.createTextNode(val);
     var tick = document.createElement('i');
     tick.className = "fa fa-check";
+    tick.id = "check";
     listEl.appendChild(tick);
     listEl.appendChild(itemText);
     // if important is ticked
