@@ -11,38 +11,40 @@
 </head>
 <body>
   <!-- =============== Warning Overlay ================ -->
-  <div class="warning">
+  <section class="warning">
       <h1>Warning!</h1>
       <p>This will remove everything, and cannot be undone. Are you sure?</p>
       <div class="button-holder">
         <button id="delEverything"><i class="fa fa-check"></i></button>
         <button id="undo"><i class="fa fa-times"></i></button>
       </div>
-  </div>
+  </section>
 
-
+  <!-- =============================== Rename Overlay ====================================== -->
+  <section class="rename-container">
+    <p>Please enter the new name</p>
+    <form class="button-holder">
+      <input type="text" id="new-name">
+      <button type="submit" id="rename"><i class="fa fa-check"></i></button>
+      <button id="cancel"><i class="fa fa-times"></i></button>
+    </form>
+  </section>
+  
 
   <!-- ====================================================== -->
   <div class="list-container">
     <div class="logo"></div>
     <div class="button-holder">
-      <p>Select your background color</p>  
-      <input type="color" id="color">
-    </div>
-    <div class="button-holder">
       <button id="menu-open" class="add-button">Open Menu</button>
     </div>
     <hr>
     <form class="dropdown">
-        <p>End with a ! if it's important...</p>
-        <input type="text" placeholder="Add Item" id="item-to-add">
-<!-- ======== currently hidden while trying other options =============
-        <div id="radio-group">
-          <label for="important" class="label">Important</label>
-          <input type="checkbox" id="important">
-          <label for="important" class="inner"></label>
-        </div>
-    =================================================================== -->
+      <div class="button-holder" id="bg-select">
+        <p>Select your background color</p>  
+        <input type="color" id="color">
+      </div>
+      <p>If it's important, end with a !</p>
+      <input type="text" placeholder="Add Item" id="item-to-add">
       <div class="button-holder">
         <button type="submit" class="add-button" id="add-to-list">Add to List</button>
       </div>

@@ -1,11 +1,35 @@
 var toDelete = [];
 
 $(function() {
+  // jQuery UI sortable options:
   $('.list').sortable({
     opacity: 0.8,
     cursor: "move "
   });
+  // renaming
+  $('.list').on('click', 'span', function(e) {
+    $this = this;
+    console.log($this);
+    $('.rename-container').css('top', (e.pageY - 50) ).fadeIn('fast');
+    $('#new-name').focus().val($this.textContent);
+    $('#rename').on('click', function(e) {
+      e.preventDefault();
+      var newName = $('#new-name').val();
+      if (newName !== "") {
+        if (newName[newName.length - 1] === "!") {
+          $this.parentElement.className = "imp-item";
+        } else {
+          $this.parentElement.className = "item";
+        }
+        $this.textContent = newName;
+        $('.rename-container').fadeOut('fast');
+      }
+    })
+  });
+
+  // button manager
   $('.button-holder').on('click', 'button', function(e) {
+    e.preventDefault();
     switch (this.id) {
       // when #menu-open button clicked, 
       case "menu-open":
@@ -32,7 +56,6 @@ $(function() {
         break;
       // when #add-to-list is pressed 
       case "add-to-list":
-        e.preventDefault();
         addToList($('#item-to-add').val(), $('#important').prop('checked'));
         $('#item-to-add').focus();
         break;
@@ -51,6 +74,11 @@ $(function() {
         });
         // clear toDelete array
         toDelete = [];
+        break;
+      case "rename":
+        break;
+      case "cancel":
+        $('.rename-container').fadeOut('fast');
         break;
       default:
         console.log('Mama?...sumthang goin wrong ere...');
@@ -76,7 +104,6 @@ $(function() {
       });
     // if undo pressed
     } else if (this.id === "put-back") {
-      console.log('clicked');
       var item;
       for (var i = 0; i < toDelete.length; i++) {
         if (toDelete[i].name === $(this).parent().text()) {
@@ -90,12 +117,9 @@ $(function() {
     } else if (this.id === "delete-item") {
       $parent.slideUp(500, function() {
         $(this).remove();
-      })
+      });
     }
   });
-
-
-
   // faffing with color
   $('#color').on('change', function() {
     $('html').css('background-color', $(this).val());
@@ -104,7 +128,9 @@ $(function() {
 
 
 
-// function addToList(val, imp)
+
+
+
 function addToList(val) {
   // check textbox has value
   if (val !== "") {
@@ -113,10 +139,12 @@ function addToList(val) {
     var listEl = document.createElement('li');
     var itemText = document.createTextNode(val);
     var tick = document.createElement('i');
+    var span = document.createElement('span');
     tick.className = "fa fa-check";
     tick.id = "check";
+    span.appendChild(itemText);
     listEl.appendChild(tick);
-    listEl.appendChild(itemText);
+    listEl.appendChild(span);
     // if important is ticked
     if (imp) {
       // add to top of the list

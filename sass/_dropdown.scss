@@ -18,44 +18,12 @@
       outline: none;
     }
   }
-//   #radio-group {
-//     margin-bottom: 4%; 
-//     margin-top: 2%;
-//     margin-left: 34%;
-//     border-radius: 100%;
-//     position: relative;
-//     box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
-//     width: 30px;
-//     height: 30px;
-//     background-color: #ddd;
-//     input[type="checkbox"] {
-//       visibility: hidden;
-//       &:checked + .inner {
-//         background-color: darken($red, 30%);
-//       }
-//     }
-//     .inner {
-//       display: block;
-//       width: 20px;
-//       height: 20px;
-//       border-radius: 100%;
-//       transition: all .5s ease;
-//       cursor: pointer;
-//       position: absolute;
-//       top: 5px;
-//       left: 5px;
-//       z-index: 1;
-//       background-color: #333;
-//       box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-//     }
-//     .label {
-//       margin-left: 140%;
-//       vertical-align: text-bottom;
-//     }
-//   }
-//   .button-holder > button {
-//     margin: 0 0.5em;
-//   }
+  #bg-select {
+    display: none;
+    @media screen and (min-width: 678px) {
+      display: block;
+    }
+  }
 }
 
 

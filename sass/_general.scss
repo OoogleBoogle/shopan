@@ -10,7 +10,8 @@ $orange: #FB9D0B;
 // =========================== Fonts =========================
 
 body,
-#item-to-add {
+#item-to-add,
+#new-name {
   font-family: 'Gloria Hallelujah', cursive;
 }
 
@@ -24,6 +25,7 @@ button {
 // ====================== General ========================
 
 html {
+  background-color: $yellow;
   @media screen and (min-width: 678px) {
     background-color: $paleblue;
   }
@@ -80,7 +82,6 @@ hr {
 .add-button,
 .list-complete,
 .delete-all {
-  background-color: $orange;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -91,6 +92,10 @@ hr {
   &:focus {
     outline: none;
   }
+}
+
+.add-button {
+  background-color: $orange;
 }
 
 .delete-all {

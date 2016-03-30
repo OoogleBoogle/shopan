@@ -69,11 +69,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 /* line 12, ../sass/_general.scss */
 body,
-#item-to-add {
+#item-to-add,
+#new-name {
   font-family: 'Gloria Hallelujah', cursive;
 }
 
-/* line 17, ../sass/_general.scss */
+/* line 18, ../sass/_general.scss */
 button {
   font-family: 'Poiret One', cursive;
   font-weight: 600;
@@ -81,25 +82,26 @@ button {
   cursor: pointer;
 }
 
-/* line 26, ../sass/_general.scss */
+/* line 27, ../sass/_general.scss */
 html {
+  background-color: #FCE38A;
   transition: background-color 2s;
 }
 @media screen and (min-width: 678px) {
-  /* line 26, ../sass/_general.scss */
+  /* line 27, ../sass/_general.scss */
   html {
     background-color: #EAFFD0;
   }
 }
 
-/* line 33, ../sass/_general.scss */
+/* line 35, ../sass/_general.scss */
 body {
   background-color: #FCE38A;
   max-width: 42em;
   margin: 0 auto;
 }
 @media screen and (min-width: 678px) {
-  /* line 33, ../sass/_general.scss */
+  /* line 35, ../sass/_general.scss */
   body {
     margin-top: 4vw;
     margin-bottom: 4vw;
@@ -107,21 +109,21 @@ body {
   }
 }
 
-/* line 44, ../sass/_general.scss */
+/* line 46, ../sass/_general.scss */
 .list-container {
   padding: 1em;
   max-width: 40em;
   margin: 0 auto;
 }
 
-/* line 50, ../sass/_general.scss */
+/* line 52, ../sass/_general.scss */
 hr {
   margin: 0 auto;
   width: 3%;
   border-color: #000;
 }
 
-/* line 57, ../sass/_general.scss */
+/* line 59, ../sass/_general.scss */
 .fa {
   padding: .3em;
   border: 1px solid;
@@ -131,23 +133,22 @@ hr {
   cursor: pointer;
 }
 
-/* line 66, ../sass/_general.scss */
+/* line 68, ../sass/_general.scss */
 .fa-check {
   color: #008400;
   margin-right: 1.5em;
 }
 
-/* line 71, ../sass/_general.scss */
+/* line 73, ../sass/_general.scss */
 .fa-times {
   margin-right: 1.5em;
   color: #990f0f;
 }
 
-/* line 80, ../sass/_general.scss */
+/* line 82, ../sass/_general.scss */
 .add-button,
 .list-complete,
 .delete-all {
-  background-color: #FB9D0B;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -156,24 +157,29 @@ hr {
   border-bottom-width: 2px;
   border-bottom-color: rgba(251, 157, 11, 0.51);
 }
-/* line 91, ../sass/_general.scss */
+/* line 92, ../sass/_general.scss */
 .add-button:focus,
 .list-complete:focus,
 .delete-all:focus {
   outline: none;
 }
 
-/* line 96, ../sass/_general.scss */
+/* line 97, ../sass/_general.scss */
+.add-button {
+  background-color: #FB9D0B;
+}
+
+/* line 101, ../sass/_general.scss */
 .delete-all {
   background-color: #c81313;
 }
 
-/* line 100, ../sass/_general.scss */
+/* line 105, ../sass/_general.scss */
 .list-complete {
   background-color: #37FF37;
 }
 
-/* line 104, ../sass/_general.scss */
+/* line 109, ../sass/_general.scss */
 .button-holder {
   text-align: center;
   padding-bottom: .5em;
@@ -209,6 +215,16 @@ hr {
 /* line 17, ../sass/_dropdown.scss */
 .dropdown #item-to-add:focus {
   outline: none;
+}
+/* line 21, ../sass/_dropdown.scss */
+.dropdown #bg-select {
+  display: none;
+}
+@media screen and (min-width: 678px) {
+  /* line 21, ../sass/_dropdown.scss */
+  .dropdown #bg-select {
+    display: block;
+  }
 }
 
 /* line 1, ../sass/_list.scss */
@@ -279,4 +295,46 @@ hr {
   margin: 0;
   border: none;
   margin: 0 0.5em;
+}
+
+/* line 1, ../sass/_rename.scss */
+.rename-container {
+  display: none;
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  max-width: 398px;
+  background-color: #FCE38A;
+  opacity: .9;
+  padding: .7em;
+  color: black;
+  text-align: center;
+  margin: 0 auto;
+  z-index: 9999;
+  border: 3px solid slategray;
+  border-radius: 20px;
+  box-shadow: 0px 14px 36px -6px black;
+}
+/* line 17, ../sass/_rename.scss */
+.rename-container #new-name {
+  position: relative;
+  display: block;
+  max-width: 80%;
+  margin: .9em auto;
+  border: none;
+  border-bottom: 1px dashed black;
+  background-color: transparent;
+}
+/* line 25, ../sass/_rename.scss */
+.rename-container #new-name:focus {
+  outline: none;
+}
+/* line 29, ../sass/_rename.scss */
+.rename-container button {
+  background-color: transparent;
+  border: none;
+}
+/* line 32, ../sass/_rename.scss */
+.rename-container button:focus {
+  outline: none;
 }
