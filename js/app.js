@@ -1,43 +1,49 @@
-var toDelete = [];
 
 $(function() {
+  var toDelete = [];
+
   $('.button-holder').on('click', 'button', function(e) {
-    switch ($(this).text()) {     
+    switch (this.id) {     
       // when #menu-open button clicked, 
-      case "Open Menu":
-        // animate hr
-        $this = $(this);
-        $('hr').animate({ 
-          width: '78%'
-          // 'margin-left': "11%"
-        }, 200, function() {
-          //menu slides down
-          $('.dropdown').slideDown();
-          $($this).text('Close Menu');
-          $('#item-to-add').focus();
-        });
-        break;
-      case "Close Menu":
-        // menu slides up
-        $(this).text('Open Menu');
-        $('.dropdown').slideUp(200, function() {
-          $('hr').animate({
-            width: '3%'
-            // 'margin-left': '50%'
-          }, 200);
-        });
+      case "menu-open":
+        if ($('.dropdown').is(':visible')) {
+          // menu slides up
+          $(this).text('Open Menu');
+          $('.dropdown').slideUp(200, function() {
+            $('hr').animate({
+              width: '3%'
+            }, 200);
+          }); 
+        } else {          
+          $this = $(this);
+          $('hr').animate({ 
+            width: '78%'
+            // 'margin-left': "11%"
+          }, 200, function() {
+            //menu slides down
+            $('.dropdown').slideDown();
+            $($this).text('Close Menu');
+            $('#item-to-add').focus();
+          });
+        }
         break;
       // when #add-to-list is pressed 
-      case "Add to List":
+      case "add-to-list":
         e.preventDefault();
         addToList($('#item-to-add').val(), $('#important').prop('checked'));
         $('#item-to-add').focus();
         break;
       // when delete is pressed
-      case "Delete":
-        // find items for deletion
-        // remove them
-        $('.complete').slideUp(500, function() {
+      case "delete-all":
+        $('.warning').fadeIn('fast');
+        break;
+      case "undo":
+        $('.warning').fadeOut('fast');
+        break;
+      case "delEverything":
+        $('.warning').fadeOut('fast');
+        // delete all items - Duh.
+        $('.list').children().slideUp(500, function() {
           $(this).remove();
         });
         // clear toDelete array
@@ -47,43 +53,59 @@ $(function() {
         console.log('Mama?...sumthang goin wrong ere...');
     }
   });
-  //when item pressed add to delete staging queue
-  $('.list').on('click', 'li', function() {
-    // check if already staged
-    if ($(this).hasClass('imp-item') || $(this).hasClass('item')) {
+  //when items icon is pressed...
+  $('.list').on('click', 'i', function() {
+    var $parent = $(this).parent();
+    // check if a tick
+    if ($(this).hasClass('fa-check')) {
       // create an object holding cuttent properties for 'undeletion'
-      var imp = $(this).hasClass('imp-item');
-      var props = {name: $(this).text(), important: imp};
+      var imp = $parent.hasClass('imp-item');
+      // store properties in an object, just in case
+      var props = {name: $parent.text(), important: imp};
       toDelete.push(props);
       // remove and add to the bottom of the list
-      $(this).slideUp(500, function() {
+      $parent.slideUp(500, function() {
         var $item = $(this).detach().attr('class', 'complete');
+        $item.find('i').remove()
+        .end().prepend('<i class="fa fa-undo"></i><i class="fa fa-times"></li>');
         $('.list').append($item);
         $('.list').children().last().slideDown();
       });
-      // if item is already complete - add back
-    } else if ($(this).hasClass('complete')) {
+    // if undo pressed
+    } else if ($(this).hasClass('fa-undo')) {
       var item;
       for (var i = 0; i < toDelete.length; i++) {
-        if (toDelete[i].name === $(this).text()) {
+        if (toDelete[i].name === $(this).parent().text()) {
           item = toDelete[i];
           toDelete.splice(i,1);
         }
       }
-      $(this).slideUp();
+      $(this).parent().slideUp();
       addToList(item.name, item.important);
+    // or cancel
+    } else if ($(this).hasClass('fa-times')) {
+      $parent.slideUp(500, function() {
+        $(this).remove();
+      })
     }
+  });
+  // faffing with color
+  $('#color').on('change', function() {
+    $('html').css('background-color', $(this).val());
   });
 });
 
 // function addToList(val, imp)
-  function addToList(val) {
-  // check textbax has value
+function addToList(val) {
+  // check textbox has value
   if (val !== "") {
     var imp = val[val.length - 1] === "!" ? true : false;
     // create element to escape HTML tags
-    var itemText = document.createTextNode(val);
     var listEl = document.createElement('li');
+    var itemText = document.createTextNode(val);
+    var tick = document.createElement('i');
+    tick.className = "fa fa-check";
+    listEl.appendChild(tick);
     listEl.appendChild(itemText);
     // if important is ticked
     if (imp) {
@@ -91,7 +113,7 @@ $(function() {
       listEl.className = 'imp-item';
       $('.list').prepend(listEl);
       $('.imp-item:first').slideDown();
-      $('#important').prop('checked', false);
+      // $('#important').prop('checked', false);
     // otherwise...
     } else {
       // build html

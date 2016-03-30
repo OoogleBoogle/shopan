@@ -81,6 +81,10 @@ button {
   cursor: pointer;
 }
 
+/* line 26, ../sass/_general.scss */
+html {
+  transition: background-color 2s;
+}
 @media screen and (min-width: 678px) {
   /* line 26, ../sass/_general.scss */
   html {
@@ -88,14 +92,14 @@ button {
   }
 }
 
-/* line 32, ../sass/_general.scss */
+/* line 33, ../sass/_general.scss */
 body {
   background-color: #FCE38A;
   max-width: 42em;
   margin: 0 auto;
 }
 @media screen and (min-width: 678px) {
-  /* line 32, ../sass/_general.scss */
+  /* line 33, ../sass/_general.scss */
   body {
     margin-top: 4vw;
     margin-bottom: 4vw;
@@ -103,21 +107,43 @@ body {
   }
 }
 
-/* line 43, ../sass/_general.scss */
+/* line 44, ../sass/_general.scss */
 .list-container {
   padding: 1em;
   max-width: 40em;
   margin: 0 auto;
 }
 
-/* line 49, ../sass/_general.scss */
+/* line 50, ../sass/_general.scss */
 hr {
   margin: 0 auto;
   width: 3%;
   border-color: #000;
 }
 
-/* line 59, ../sass/_general.scss */
+/* line 57, ../sass/_general.scss */
+.fa {
+  padding: .3em;
+  border: 1px solid;
+  border-radius: 100%;
+  margin: 0 .5em;
+  padding: .3em;
+  cursor: pointer;
+}
+
+/* line 66, ../sass/_general.scss */
+.fa-check {
+  color: #008400;
+  margin-right: 1.5em;
+}
+
+/* line 71, ../sass/_general.scss */
+.fa-times {
+  margin-right: 1.5em;
+  color: #990f0f;
+}
+
+/* line 79, ../sass/_general.scss */
 .add-button,
 .list-complete,
 .delete-all {
@@ -130,24 +156,24 @@ hr {
   border-bottom-width: 2px;
   border-bottom-color: rgba(251, 157, 11, 0.51);
 }
-/* line 70, ../sass/_general.scss */
+/* line 90, ../sass/_general.scss */
 .add-button:focus,
 .list-complete:focus,
 .delete-all:focus {
   outline: none;
 }
 
-/* line 75, ../sass/_general.scss */
+/* line 95, ../sass/_general.scss */
 .delete-all {
   background-color: #c81313;
 }
 
-/* line 79, ../sass/_general.scss */
+/* line 99, ../sass/_general.scss */
 .list-complete {
   background-color: #37FF37;
 }
 
-/* line 83, ../sass/_general.scss */
+/* line 103, ../sass/_general.scss */
 .button-holder {
   text-align: center;
   padding-bottom: .5em;
@@ -194,7 +220,6 @@ hr {
 .list li {
   padding: .5em;
   border-bottom: 1px dotted black;
-  cursor: pointer;
 }
 /* line 9, ../sass/_list.scss */
 .list .imp-item {
@@ -211,4 +236,46 @@ hr {
   background-color: gray;
   text-decoration: line-through;
   display: none;
+}
+
+/* line 1, ../sass/_warning.scss */
+.warning {
+  display: none;
+  font-family: 'Poiret One', cursive;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  text-shadow: 0 0 .5px white;
+  text-align: center;
+}
+/* line 12, ../sass/_warning.scss */
+.warning h1 {
+  color: #ea2424;
+  font-size: 4em;
+  margin-top: 1.5em;
+}
+/* line 17, ../sass/_warning.scss */
+.warning p {
+  color: #F38181;
+  font-size: 2em;
+  margin-top: 2em;
+  padding-bottom: 1em;
+}
+/* line 23, ../sass/_warning.scss */
+.warning button {
+  border: none;
+  color: #37FF37;
+  font-size: 1.8em;
+  padding: .2em;
+  background-color: transparent;
+}
+/* line 30, ../sass/_warning.scss */
+.warning .fa-check,
+.warning .fa-times {
+  margin: 0;
+  border: none;
+  margin: 0 0.5em;
 }

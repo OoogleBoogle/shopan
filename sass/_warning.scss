@@ -1,0 +1,36 @@
+.warning {
+  display: none;
+  font-family: 'Poiret One', cursive; 
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.9);
+  text-shadow: 0 0 .5px white;
+  text-align: center;
+  h1 {
+    color: darken($red, 20%);
+    font-size: 4em;
+    margin-top: 1.5em;
+  }
+  p {
+    color: $red;
+    font-size: 2em;
+    margin-top: 2em;
+    padding-bottom: 1em;
+  }
+  button {
+    border: none;
+    color: $green;
+    font-size: 1.8em;
+    padding: .2em;
+    background-color: transparent;
+  }
+  .fa-check,
+  .fa-times {
+    margin: 0;
+    border: none;
+    margin: 0 0.5em;
+  }
+}

@@ -9,8 +9,25 @@
   <title>Shopan</title>
 </head>
 <body>
+  <!-- =============== Warning Overlay ================ -->
+  <div class="warning">
+      <h1>Warning!</h1>
+      <p>This will remove everything, and cannot be undone. Are you sure?</p>
+      <div class="button-holder">
+        <button id="delEverything"><i class="fa fa-check"></i></button>
+        <button id="undo"><i class="fa fa-times"></i></button>
+      </div>
+  </div>
+
+
+
+  <!-- ====================================================== -->
   <div class="list-container">
     <div class="logo"></div>
+    <div class="button-holder">
+      <p>Select your background color</p>  
+      <input type="color" id="color">
+    </div>
     <div class="button-holder">
       <button id="menu-open" class="add-button">Open Menu</button>
     </div>
@@ -31,10 +48,11 @@
     </form>
     <ul class="list"></ul>
     <div class="button-holder">
-      <button class="delete-all">Delete</button>
+      <button class="delete-all" id="delete-all">Delete All</button>
     </div>
   </div>
   <script   src="//code.jquery.com/jquery-2.2.2.min.js"   integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="   crossorigin="anonymous"></script>
+  <script src="https://use.fonticons.com/910b449e.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
