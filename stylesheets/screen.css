@@ -143,7 +143,7 @@ hr {
   color: #990f0f;
 }
 
-/* line 79, ../sass/_general.scss */
+/* line 80, ../sass/_general.scss */
 .add-button,
 .list-complete,
 .delete-all {
@@ -156,24 +156,24 @@ hr {
   border-bottom-width: 2px;
   border-bottom-color: rgba(251, 157, 11, 0.51);
 }
-/* line 90, ../sass/_general.scss */
+/* line 91, ../sass/_general.scss */
 .add-button:focus,
 .list-complete:focus,
 .delete-all:focus {
   outline: none;
 }
 
-/* line 95, ../sass/_general.scss */
+/* line 96, ../sass/_general.scss */
 .delete-all {
   background-color: #c81313;
 }
 
-/* line 99, ../sass/_general.scss */
+/* line 100, ../sass/_general.scss */
 .list-complete {
   background-color: #37FF37;
 }
 
-/* line 103, ../sass/_general.scss */
+/* line 104, ../sass/_general.scss */
 .button-holder {
   text-align: center;
   padding-bottom: .5em;
@@ -220,6 +220,7 @@ hr {
 .list li {
   padding: .5em;
   border-bottom: 1px dotted black;
+  cursor: -webkit-grab;
 }
 /* line 9, ../sass/_list.scss */
 .list .imp-item {

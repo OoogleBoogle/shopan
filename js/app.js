@@ -1,12 +1,12 @@
+var toDelete = [];
 
 $(function() {
-  var toDelete = [];
   $('.list').sortable({
     opacity: 0.8,
     cursor: "move "
   });
   $('.button-holder').on('click', 'button', function(e) {
-    switch (this.id) {     
+    switch (this.id) {
       // when #menu-open button clicked, 
       case "menu-open":
         if ($('.dropdown').is(':visible')) {
@@ -60,7 +60,7 @@ $(function() {
   $('.list').on('click', 'i', function() {
     var $parent = $(this).parent();
     // check if a tick
-    if ($(this).is($('#check'))) {
+    if (this.id === 'check') {
       // create an object holding cuttent properties for 'undeletion'
       var imp = $parent.hasClass('imp-item');
       // store properties in an object, just in case
@@ -75,7 +75,7 @@ $(function() {
         $('.list').children().last().slideDown();
       });
     // if undo pressed
-    } else if ($(this).is($('#put-back'))) {
+    } else if (this.id === "put-back") {
       console.log('clicked');
       var item;
       for (var i = 0; i < toDelete.length; i++) {
@@ -87,7 +87,7 @@ $(function() {
       $(this).parent().slideUp();
       addToList(item.name, item.important);
     // or cancel
-    } else if ($(this).is($('#delete-item'))) {
+    } else if (this.id === "delete-item") {
       $parent.slideUp(500, function() {
         $(this).remove();
       })
