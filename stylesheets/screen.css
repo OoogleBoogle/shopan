@@ -204,6 +204,7 @@ hr {
 
 /* line 1, ../sass/_dropdown.scss */
 .dropdown {
+  display: none;
   border-bottom: 2px solid black;
   padding-bottom: .2em;
   margin: 0.4em auto;
