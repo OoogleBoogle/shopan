@@ -35,6 +35,7 @@ $(function() {
       case "menu-open":
         if ($('.dropdown').is(':visible')) {
           // menu slides up
+          $('#filter-holder').hide();
           $(this).text('Open Menu');
           $('.dropdown').slideUp(200, function() {
             $('hr').animate({
@@ -48,7 +49,9 @@ $(function() {
             // 'margin-left': "11%"
           }, 200, function() {
             //menu slides down
-            $('.dropdown').slideDown();
+            $('.dropdown').slideDown('slow', function() {
+              $('#filter-holder').fadeIn(100);
+            });
             $($this).text('Close Menu');
             $('#item-to-add').focus();
           });
@@ -124,11 +127,21 @@ $(function() {
   $('#color').on('change', function() {
     $('html').css('background-color', $(this).val());
   });
+
+  $('#filter').on('change', function() {
+    if (this.checked) {
+      $('.list').find('.item').slideUp();
+    } else {
+      $('.list').find('.item').slideDown();
+    }
+  });
 });
 
 
 
-
+function log(i) {
+  console.log(i);
+}
 
 
 function addToList(val) {

@@ -40,13 +40,18 @@
     <hr>
     <form class="dropdown">
       <div class="button-holder" id="bg-select">
-        <p>Select your background color</p>  
+        <span>Background Colour</span>  
         <input type="color" id="color">
       </div>
       <p>If it's important, end with a !</p>
       <input type="text" placeholder="Add Item" id="item-to-add">
       <div class="button-holder">
         <button type="submit" class="add-button" id="add-to-list">Add to List</button>
+      </div>
+      <hr class="divider">
+      <div class="button-holder" id="filter-holder">
+        <input id="filter" type="checkbox">
+        <label for="filter" class="filter-label">Filter Important<span class="line"><hr></span></label>
       </div>
     </form>
     <ul class="list"></ul>

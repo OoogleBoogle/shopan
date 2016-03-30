@@ -1,8 +1,7 @@
-
-
 .dropdown {
-  display: none;
+  // display: none;
   border-bottom: 2px solid black;
+  padding-bottom: .2em;
   margin: 0.4em auto;
   max-width: 78%;
   text-align: center;
@@ -20,8 +19,46 @@
   }
   #bg-select {
     display: none;
+    border-bottom: 1px solid  #bbb;
+    margin-bottom: 1em;
+    span {
+      padding-right: 1em;
+    }
     @media screen and (min-width: 678px) {
       display: block;
+    }
+  }
+  #filter-holder {
+    display: none;
+  }
+  #filter {
+    visibility: hidden;
+    position: absolute;
+    &:checked + .filter-label:after {
+      margin-left: 1em;
+      background-color: $green;
+    }
+  }
+  .filter-label {
+    span {
+      position: absolute;
+      hr {
+        width: 1em;
+        margin: 0.5em;
+        top: 4em;
+      }
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      width: 0.5em;
+      height: 0.5em;
+      margin-left: 0.5em;
+      margin-top: 0.2em;
+      border: 2px solid gray;
+      background-color: darken($red, 35%);
+      border-radius: 50px;
+      transition: all 1s;
     }
   }
 }

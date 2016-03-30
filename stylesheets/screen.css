@@ -145,7 +145,15 @@ hr {
   color: #990f0f;
 }
 
-/* line 82, ../sass/_general.scss */
+/* line 78, ../sass/_general.scss */
+.divider {
+  color: #ccc;
+  border-color: #ccc;
+  width: 100% !important;
+  margin: .6em 0px;
+}
+
+/* line 88, ../sass/_general.scss */
 .add-button,
 .list-complete,
 .delete-all {
@@ -157,29 +165,29 @@ hr {
   border-bottom-width: 2px;
   border-bottom-color: rgba(251, 157, 11, 0.51);
 }
-/* line 92, ../sass/_general.scss */
+/* line 98, ../sass/_general.scss */
 .add-button:focus,
 .list-complete:focus,
 .delete-all:focus {
   outline: none;
 }
 
-/* line 97, ../sass/_general.scss */
+/* line 103, ../sass/_general.scss */
 .add-button {
   background-color: #FB9D0B;
 }
 
-/* line 101, ../sass/_general.scss */
+/* line 107, ../sass/_general.scss */
 .delete-all {
   background-color: #c81313;
 }
 
-/* line 105, ../sass/_general.scss */
+/* line 111, ../sass/_general.scss */
 .list-complete {
   background-color: #37FF37;
 }
 
-/* line 109, ../sass/_general.scss */
+/* line 115, ../sass/_general.scss */
 .button-holder {
   text-align: center;
   padding-bottom: .5em;
@@ -194,15 +202,15 @@ hr {
   margin-bottom: 1em;
 }
 
-/* line 3, ../sass/_dropdown.scss */
+/* line 1, ../sass/_dropdown.scss */
 .dropdown {
-  display: none;
   border-bottom: 2px solid black;
+  padding-bottom: .2em;
   margin: 0.4em auto;
   max-width: 78%;
   text-align: center;
 }
-/* line 9, ../sass/_dropdown.scss */
+/* line 8, ../sass/_dropdown.scss */
 .dropdown #item-to-add {
   border: none;
   border-bottom: 1px dashed black;
@@ -212,19 +220,62 @@ hr {
   margin-bottom: 0.5em;
   width: 50%;
 }
-/* line 17, ../sass/_dropdown.scss */
+/* line 16, ../sass/_dropdown.scss */
 .dropdown #item-to-add:focus {
   outline: none;
 }
-/* line 21, ../sass/_dropdown.scss */
+/* line 20, ../sass/_dropdown.scss */
 .dropdown #bg-select {
   display: none;
+  border-bottom: 1px solid  #bbb;
+  margin-bottom: 1em;
+}
+/* line 24, ../sass/_dropdown.scss */
+.dropdown #bg-select span {
+  padding-right: 1em;
 }
 @media screen and (min-width: 678px) {
-  /* line 21, ../sass/_dropdown.scss */
+  /* line 20, ../sass/_dropdown.scss */
   .dropdown #bg-select {
     display: block;
   }
+}
+/* line 31, ../sass/_dropdown.scss */
+.dropdown #filter-holder {
+  display: none;
+}
+/* line 34, ../sass/_dropdown.scss */
+.dropdown #filter {
+  visibility: hidden;
+  position: absolute;
+}
+/* line 37, ../sass/_dropdown.scss */
+.dropdown #filter:checked + .filter-label:after {
+  margin-left: 1em;
+  background-color: #37FF37;
+}
+/* line 43, ../sass/_dropdown.scss */
+.dropdown .filter-label span {
+  position: absolute;
+}
+/* line 45, ../sass/_dropdown.scss */
+.dropdown .filter-label span hr {
+  width: 1em;
+  margin: 0.5em;
+  top: 4em;
+}
+/* line 51, ../sass/_dropdown.scss */
+.dropdown .filter-label:after {
+  position: absolute;
+  content: "";
+  width: 0.5em;
+  height: 0.5em;
+  margin-left: 0.5em;
+  margin-top: 0.2em;
+  border: 2px solid gray;
+  background-color: #b11111;
+  border-radius: 50px;
+  transition: all 1s;
 }
 
 /* line 1, ../sass/_list.scss */
