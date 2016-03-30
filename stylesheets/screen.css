@@ -84,46 +84,42 @@ button {
 
 /* line 27, ../sass/_general.scss */
 html {
-  background-color: #FCE38A;
-  transition: background-color 2s;
-}
-@media screen and (min-width: 678px) {
-  /* line 27, ../sass/_general.scss */
-  html {
-    background-color: #EAFFD0;
-  }
+  background: transparent url("../images/background.svg") center repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-/* line 35, ../sass/_general.scss */
-body {
+/* line 34, ../sass/_general.scss */
+.full-container {
+  background: transparent url("../images/foreground.svg") center repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 3em;
+  padding-bottom: 10%;
+  min-height: 95vh;
+}
+
+/* line 45, ../sass/_general.scss */
+.list-container {
+  padding: 1em 0;
+  width: 100%;
   background-color: #FCE38A;
   max-width: 42em;
   margin: 0 auto;
-}
-@media screen and (min-width: 678px) {
-  /* line 35, ../sass/_general.scss */
-  body {
-    margin-top: 4vw;
-    margin-bottom: 4vw;
-    box-shadow: 0px 4px 8px 3px gray;
-  }
-}
-
-/* line 46, ../sass/_general.scss */
-.list-container {
-  padding: 1em;
   max-width: 40em;
   margin: 0 auto;
+  margin-bottom: 4vw;
+  box-shadow: 0px 4px 8px 3px gray;
 }
 
-/* line 52, ../sass/_general.scss */
+/* line 57, ../sass/_general.scss */
 hr {
   margin: 0 auto;
   width: 3%;
   border-color: #000;
 }
 
-/* line 59, ../sass/_general.scss */
+/* line 64, ../sass/_general.scss */
 .fa {
   padding: .3em;
   border: 1px solid;
@@ -133,19 +129,19 @@ hr {
   cursor: pointer;
 }
 
-/* line 68, ../sass/_general.scss */
+/* line 73, ../sass/_general.scss */
 .fa-check {
   color: #008400;
   margin-right: 1.5em;
 }
 
-/* line 73, ../sass/_general.scss */
+/* line 78, ../sass/_general.scss */
 .fa-times {
   margin-right: 1.5em;
   color: #990f0f;
 }
 
-/* line 78, ../sass/_general.scss */
+/* line 83, ../sass/_general.scss */
 .divider {
   color: #ccc;
   border-color: #ccc;
@@ -153,7 +149,7 @@ hr {
   margin: .6em 0px;
 }
 
-/* line 88, ../sass/_general.scss */
+/* line 93, ../sass/_general.scss */
 .add-button,
 .list-complete,
 .delete-all {
@@ -165,29 +161,29 @@ hr {
   border-bottom-width: 2px;
   border-bottom-color: rgba(251, 157, 11, 0.51);
 }
-/* line 98, ../sass/_general.scss */
+/* line 103, ../sass/_general.scss */
 .add-button:focus,
 .list-complete:focus,
 .delete-all:focus {
   outline: none;
 }
 
-/* line 103, ../sass/_general.scss */
+/* line 108, ../sass/_general.scss */
 .add-button {
   background-color: #FB9D0B;
 }
 
-/* line 107, ../sass/_general.scss */
+/* line 112, ../sass/_general.scss */
 .delete-all {
   background-color: #c81313;
 }
 
-/* line 111, ../sass/_general.scss */
+/* line 116, ../sass/_general.scss */
 .list-complete {
   background-color: #37FF37;
 }
 
-/* line 115, ../sass/_general.scss */
+/* line 120, ../sass/_general.scss */
 .button-holder {
   text-align: center;
   padding-bottom: .5em;
@@ -281,26 +277,28 @@ hr {
 
 /* line 1, ../sass/_list.scss */
 .list {
-  background-color: #fff;
+  background-color: #FCE38A;
   margin-bottom: 0.5em;
 }
 /* line 4, ../sass/_list.scss */
 .list li {
   padding: .5em;
+  max-width: 30em;
   border-bottom: 1px dotted black;
   cursor: -webkit-grab;
+  margin: 0 auto;
 }
-/* line 9, ../sass/_list.scss */
+/* line 11, ../sass/_list.scss */
 .list .imp-item {
   background-color: #F38181;
   display: none;
 }
-/* line 13, ../sass/_list.scss */
+/* line 15, ../sass/_list.scss */
 .list .item {
   background-color: #95E1D3;
   display: none;
 }
-/* line 17, ../sass/_list.scss */
+/* line 19, ../sass/_list.scss */
 .list .complete {
   background-color: gray;
   text-decoration: line-through;

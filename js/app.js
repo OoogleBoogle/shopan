@@ -131,10 +131,22 @@ $(function() {
   $('#filter').on('change', function() {
     if (this.checked) {
       $('.list').find('.item').slideUp();
+      $('.list').find('.complete').slideUp();
     } else {
       $('.list').find('.item').slideDown();
+      $('.list').find('.complete').slideDown();
     }
   });
+
+  // funky backgrounds
+  $('.full-container').on('mousemove', function(e) {
+    $(this).css('background-position-x', (e.pageX / 50));
+    $(this).css('background-position-y', (e.pageY / 50));
+
+    $('html').css('background-position-x', (e.pageX / 90));
+    $('html').css('background-position-y', (e.pageY / 90)); 
+  });
+
 });
 
 

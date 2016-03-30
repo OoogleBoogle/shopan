@@ -10,55 +10,57 @@
   <title>Shopan</title>
 </head>
 <body>
+  <section class="full-container">
   <!-- =============== Warning Overlay ================ -->
-  <section class="warning">
-      <h1>Warning!</h1>
-      <p>This will remove everything, and cannot be undone. Are you sure?</p>
-      <div class="button-holder">
-        <button id="delEverything"><i class="fa fa-check"></i></button>
-        <button id="undo"><i class="fa fa-times"></i></button>
-      </div>
-  </section>
+    <section class="warning">
+        <h1>Warning!</h1>
+        <p>This will remove everything, and cannot be undone. Are you sure?</p>
+        <div class="button-holder">
+          <button id="delEverything"><i class="fa fa-check"></i></button>
+          <button id="undo"><i class="fa fa-times"></i></button>
+        </div>
+    </section>
 
-  <!-- =============================== Rename Overlay ====================================== -->
-  <section class="rename-container">
-    <p>Please enter the new name</p>
-    <form class="button-holder">
-      <input type="text" id="new-name">
-      <button type="submit" id="rename"><i class="fa fa-check"></i></button>
-      <button id="cancel"><i class="fa fa-times"></i></button>
-    </form>
-  </section>
-  
+    <!-- =============================== Rename Overlay ====================================== -->
+    <section class="rename-container">
+      <p>Please enter the new name</p>
+      <form class="button-holder">
+        <input type="text" id="new-name">
+        <button type="submit" id="rename"><i class="fa fa-check"></i></button>
+        <button id="cancel"><i class="fa fa-times"></i></button>
+      </form>
+    </section>
+    
 
-  <!-- ====================================================== -->
-  <div class="list-container">
-    <div class="logo"></div>
-    <div class="button-holder">
-      <button id="menu-open" class="add-button">Open Menu</button>
-    </div>
-    <hr>
-    <form class="dropdown">
-      <div class="button-holder" id="bg-select">
-        <span>Background Colour</span>  
-        <input type="color" id="color">
-      </div>
-      <p>If it's important, end with a !</p>
-      <input type="text" placeholder="Add Item" id="item-to-add">
+    <!-- ====================================================== -->
+    <div class="list-container">
+      <div class="logo"></div>
       <div class="button-holder">
-        <button type="submit" class="add-button" id="add-to-list">Add to List</button>
+        <button id="menu-open" class="add-button">Open Menu</button>
       </div>
-      <hr class="divider">
-      <div class="button-holder" id="filter-holder">
-        <input id="filter" type="checkbox">
-        <label for="filter" class="filter-label">Filter Important<span class="line"><hr></span></label>
+      <hr>
+      <form class="dropdown">
+        <div class="button-holder" id="bg-select">
+          <span>Background Colour</span>  
+          <input type="color" id="color">
+        </div>
+        <p>If it's important, end with a !</p>
+        <input type="text" placeholder="Add Item" id="item-to-add">
+        <div class="button-holder">
+          <button type="submit" class="add-button" id="add-to-list">Add to List</button>
+        </div>
+        <hr class="divider">
+        <div class="button-holder" id="filter-holder">
+          <input id="filter" type="checkbox">
+          <label for="filter" class="filter-label">Filter Important<span class="line"><hr></span></label>
+        </div>
+      </form>
+      <ul class="list"></ul>
+      <div class="button-holder">
+        <button class="delete-all" id="delete-all">Delete All</button>
       </div>
-    </form>
-    <ul class="list"></ul>
-    <div class="button-holder">
-      <button class="delete-all" id="delete-all">Delete All</button>
     </div>
-  </div>
+  </section>
   <script   src="//code.jquery.com/jquery-2.2.2.min.js"   integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="   crossorigin="anonymous"></script>
   <script src="js/jquery-ui.min.js"></script>
   <script src="js/jquery.ui.touch-punch.min.js"></script>
