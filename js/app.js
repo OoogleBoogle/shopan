@@ -37,7 +37,7 @@ $(function() {
           // menu slides up
           $('#filter-holder').hide();
           $(this).text('Open Menu');
-          $('.dropdown').slideUp(200, function() {
+          $('.dropdown').slideUp('slow', function() {
             $('hr').animate({
               width: '3%'
             }, 200);
