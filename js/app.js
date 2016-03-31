@@ -1,6 +1,6 @@
 var toDelete = [];
 
-$(document).bind('pageinit', function() {
+$(document).on('pagecreate', function() {
   // jQuery UI sortable options:
   $('.list').sortable({
     opacity: 0.8,
