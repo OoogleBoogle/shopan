@@ -254,28 +254,15 @@ hr {
 .dropdown #filter-holder {
   display: none;
 }
-/* line 41, ../sass/_dropdown.scss */
-.dropdown #filter {
+
+/* line 43, ../sass/_dropdown.scss */
+#filter {
   visibility: hidden;
   position: absolute;
 }
-/* line 44, ../sass/_dropdown.scss */
-.dropdown #filter:checked + .filter-label:after {
-  margin-left: 1em;
-  background-color: #37FF37;
-}
-/* line 50, ../sass/_dropdown.scss */
-.dropdown .filter-label span {
-  position: absolute;
-}
-/* line 52, ../sass/_dropdown.scss */
-.dropdown .filter-label span hr {
-  width: 1em;
-  margin: 0.5em;
-  top: 4em;
-}
-/* line 58, ../sass/_dropdown.scss */
-.dropdown .filter-label:after {
+
+/* line 49, ../sass/_dropdown.scss */
+.ui-checkbox-off:after, .ui-checkbox-on:after {
   position: absolute;
   content: "";
   width: 0.5em;
@@ -285,7 +272,25 @@ hr {
   border: 2px solid gray;
   background-color: #b11111;
   border-radius: 50px;
-  transition: all 1s;
+  transition: all .5s;
+}
+
+/* line 62, ../sass/_dropdown.scss */
+.ui-checkbox-on:after {
+  background-color: #37FF37;
+  margin-left: 1em;
+  transition: all .5s;
+}
+
+/* line 70, ../sass/_dropdown.scss */
+.filter-label span {
+  position: absolute;
+}
+/* line 72, ../sass/_dropdown.scss */
+.filter-label span hr {
+  width: 1em;
+  margin: 0.5em;
+  top: 4em;
 }
 
 /* line 1, ../sass/_list.scss */

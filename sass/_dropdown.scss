@@ -38,36 +38,41 @@
   #filter-holder {
     display: none;
   }
-  #filter {
-    visibility: hidden;
-    position: absolute;
-    &:checked + .filter-label:after {
-      margin-left: 1em;
-      background-color: $green;
-    }
-  }
-  .filter-label {
-    span {
-      position: absolute;
-      hr {
-        width: 1em;
-        margin: 0.5em;
-        top: 4em;
-      }
-    }
-    &:after {
-      position: absolute;
-      content: "";
-      width: 0.5em;
-      height: 0.5em;
-      margin-left: 0.5em;
-      margin-top: 0.2em;
-      border: 2px solid gray;
-      background-color: darken($red, 35%);
-      border-radius: 50px;
-      transition: all 1s;
-    }
-  }
+}
+
+#filter {
+  visibility: hidden;
+  position: absolute;
 }
 
 
+.ui-checkbox-off:after {
+  position: absolute;
+  content: "";
+  width: 0.5em;
+  height: 0.5em;
+  margin-left: 0.5em;
+  margin-top: 0.2em;
+  border: 2px solid gray;
+  background-color: darken($red, 35%);
+  border-radius: 50px;
+  transition: all .5s;
+}
+
+.ui-checkbox-on:after {
+  @extend .ui-checkbox-off:after;
+  background-color: $green;
+  margin-left: 1em;
+  transition: all .5s;
+}
+
+.filter-label {
+  span {
+    position: absolute;
+    hr {
+      width: 1em;
+      margin: 0.5em;
+      top: 4em;
+    }
+  }
+}
