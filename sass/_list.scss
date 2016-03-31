@@ -7,6 +7,9 @@
     border-bottom: 1px dotted black;
     cursor: -webkit-grab;
     margin: 0 auto;
+    span {
+      cursor: text;
+    }
   }
   .imp-item {
     background-color: $red;

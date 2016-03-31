@@ -41,7 +41,9 @@ html {
   min-height: 95vh;
 }
 
-
+.ui-loader {
+  visibility: hidden;
+}
 
 .list-container {
   padding: 1em 0;

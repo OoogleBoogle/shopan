@@ -101,7 +101,12 @@ html {
   min-height: 95vh;
 }
 
-/* line 46, ../sass/_general.scss */
+/* line 44, ../sass/_general.scss */
+.ui-loader {
+  visibility: hidden;
+}
+
+/* line 48, ../sass/_general.scss */
 .list-container {
   padding: 1em 0;
   width: 100%;
@@ -114,14 +119,14 @@ html {
   box-shadow: 0px 4px 8px 3px gray;
 }
 
-/* line 58, ../sass/_general.scss */
+/* line 60, ../sass/_general.scss */
 hr {
   margin: 0 auto;
   width: 3%;
   border-color: #000;
 }
 
-/* line 64, ../sass/_general.scss */
+/* line 66, ../sass/_general.scss */
 .fa {
   padding: .3em;
   border: 1px solid;
@@ -131,19 +136,19 @@ hr {
   cursor: pointer;
 }
 
-/* line 73, ../sass/_general.scss */
+/* line 75, ../sass/_general.scss */
 .fa-check {
   color: #008400;
   margin-right: 1.5em;
 }
 
-/* line 78, ../sass/_general.scss */
+/* line 80, ../sass/_general.scss */
 .fa-times {
   margin-right: 1.5em;
   color: #990f0f;
 }
 
-/* line 83, ../sass/_general.scss */
+/* line 85, ../sass/_general.scss */
 .divider {
   color: #ccc;
   border-color: #ccc;
@@ -151,7 +156,7 @@ hr {
   margin: .6em 0px;
 }
 
-/* line 93, ../sass/_general.scss */
+/* line 95, ../sass/_general.scss */
 .add-button,
 .list-complete,
 .delete-all {
@@ -163,29 +168,29 @@ hr {
   border-bottom-width: 2px;
   border-bottom-color: rgba(251, 157, 11, 0.51);
 }
-/* line 103, ../sass/_general.scss */
+/* line 105, ../sass/_general.scss */
 .add-button:focus,
 .list-complete:focus,
 .delete-all:focus {
   outline: none;
 }
 
-/* line 108, ../sass/_general.scss */
+/* line 110, ../sass/_general.scss */
 .add-button {
   background-color: #FB9D0B;
 }
 
-/* line 112, ../sass/_general.scss */
+/* line 114, ../sass/_general.scss */
 .delete-all {
   background-color: #c81313;
 }
 
-/* line 116, ../sass/_general.scss */
+/* line 118, ../sass/_general.scss */
 .list-complete {
   background-color: #37FF37;
 }
 
-/* line 120, ../sass/_general.scss */
+/* line 122, ../sass/_general.scss */
 .button-holder {
   text-align: center;
   padding-bottom: .5em;
@@ -296,17 +301,21 @@ hr {
   cursor: -webkit-grab;
   margin: 0 auto;
 }
-/* line 11, ../sass/_list.scss */
+/* line 10, ../sass/_list.scss */
+.list li span {
+  cursor: text;
+}
+/* line 14, ../sass/_list.scss */
 .list .imp-item {
   background-color: #F38181;
   display: none;
 }
-/* line 15, ../sass/_list.scss */
+/* line 18, ../sass/_list.scss */
 .list .item {
   background-color: #95E1D3;
   display: none;
 }
-/* line 19, ../sass/_list.scss */
+/* line 22, ../sass/_list.scss */
 .list .complete {
   background-color: gray;
   text-decoration: line-through;

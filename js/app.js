@@ -7,7 +7,7 @@ $(function() {
     cursor: "move "
   });
   // renaming
-  $('.list').on('click', 'span', function(e) {
+  $('.list').on('vclick', 'span', function(e) {
     $this = this;
     console.log($this);
     $('.rename-container').css('top', (e.pageY - 50) ).fadeIn('fast');
@@ -28,7 +28,7 @@ $(function() {
   });
 
   // button manager
-  $('.button-holder').on('click vclick', 'button', function(e) {
+  $('.button-holder').on('vclick', 'button', function(e) {
     e.preventDefault();
     switch (this.id) {
       // when #menu-open button clicked, 
@@ -88,7 +88,7 @@ $(function() {
     }
   });
   //when items icon is pressed...
-  $('.list').on('click vclick', 'i', function() {
+  $('.list').on('vclick', 'i', function() {
     var $parent = $(this).parent();
     // check if a tick
     if (this.id === 'check') {
@@ -116,8 +116,8 @@ $(function() {
       }
       $(this).parent().slideUp(function() {
         $(this).remove();
+        addToList(item.name, item.important);
       });
-      addToList(item.name, item.important);
     // or cancel
     } else if (this.id === "delete-item") {
       $parent.slideUp(500, function() {
