@@ -6,13 +6,14 @@ $(document).on('pagecreate', function() {
     opacity: 0.8,
     cursor: "move "
   });
+
   // renaming
   $('.list').on('vclick', 'span', function(e) {
     $this = this;
     console.log($this);
     $('.rename-container').css('top', (e.pageY - 50) ).fadeIn('fast');
     $('#new-name').focus().val($this.textContent);
-    $('#rename').on('click', function(e) {
+    $('#rename').on('vclick', function(e) {
       e.preventDefault();
       var newName = $('#new-name').val();
       if (newName !== "") {
