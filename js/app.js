@@ -128,6 +128,7 @@ $(function() {
     $('html').css('background-color', $(this).val());
   });
 
+  // filtering
   $('#filter').on('change', function() {
     if (this.checked) {
       $('.list').find('.item').slideUp();
