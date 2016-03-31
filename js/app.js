@@ -114,7 +114,9 @@ $(function() {
           toDelete.splice(i,1);
         }
       }
-      $(this).parent().slideUp();
+      $(this).parent().slideUp(function() {
+        $(this).remove();
+      });
       addToList(item.name, item.important);
     // or cancel
     } else if (this.id === "delete-item") {
