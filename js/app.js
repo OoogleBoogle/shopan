@@ -28,7 +28,7 @@ $(function() {
   });
 
   // button manager
-  $('.button-holder').on('click', 'button', function(e) {
+  $('.button-holder').on('click vclick', 'button', function(e) {
     e.preventDefault();
     switch (this.id) {
       // when #menu-open button clicked, 
@@ -88,7 +88,7 @@ $(function() {
     }
   });
   //when items icon is pressed...
-  $('.list').on('click', 'i', function() {
+  $('.list').on('click vclick', 'i', function() {
     var $parent = $(this).parent();
     // check if a tick
     if (this.id === 'check') {
